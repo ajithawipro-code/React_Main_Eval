@@ -11,7 +11,7 @@ const AdminProvider=({children})=>{
     
     useEffect(()=>{
 
-        const storedItems=JSON.parse(localStorage.getItem("items"));
+        const storedItems=JSON.parse(localStorage.getItem("evalData"));
         if(storedItems)
         {
             setItems(storedItems);
@@ -22,7 +22,7 @@ const AdminProvider=({children})=>{
 
         useEffect(()=>{
 
-        localStorage.setItem("items",JSON.stringify(items));
+        localStorage.setItem("evalData",JSON.stringify(items));
     
 
     },[items]);
