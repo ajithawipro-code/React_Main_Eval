@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AdminContext } from "../context/AdminContext";
 import { ItemList } from "./ItemList";
+import './ItemList.css'
 
 
 function ItemCard({item}){
@@ -12,7 +13,9 @@ function ItemCard({item}){
 
         const newname=prompt("Enter new name",item.name);
         const newaddress=prompt("Enter new address",item.address);
-        updateItem(item.id,newname,newaddress);
+        const newtype=prompt("Enter new address",item.type);
+       
+        updateItem(item.id,newname,newaddress,newtype);
     }
 
     function handleDelete()
@@ -24,7 +27,7 @@ function ItemCard({item}){
     
     return (
 
-        <div>
+        <div className="itemcard">
 
             <p>Name: {item.name}</p>
              <p>Address: {item.address}</p>

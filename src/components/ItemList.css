@@ -1,0 +1,13 @@
+.itemlist{
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+}
+
+.itemcard{
+
+    border: 5px solid black;
+    padding: "20px";
+    margin:"10px";
+}

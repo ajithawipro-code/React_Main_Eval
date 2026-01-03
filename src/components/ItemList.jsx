@@ -1,6 +1,7 @@
 import { AdminContext } from "../context/AdminContext"
 import { useContext } from "react";
 import ItemCard from "./ItemCard";
+import './ItemList.css'
 
 export const ItemList=()=>{
 
@@ -8,7 +9,7 @@ export const ItemList=()=>{
     console.log("Items is", items);
 
     return (
-        <div>
+        <div className="itemlist">
             {
                 items.map((item)=>(
 

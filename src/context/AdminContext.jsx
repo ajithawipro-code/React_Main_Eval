@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 
@@ -7,7 +7,28 @@ export const AdminContext=createContext();
 
 const AdminProvider=({children})=>{
 
+
+    
+    useEffect(()=>{
+
+        const storedItems=JSON.parse(localStorage.getItem("items"));
+        if(storedItems)
+        {
+            setItems(storedItems);
+        }
+    },[]);
+
     const [items,setItems]=useState([]);
+
+        useEffect(()=>{
+
+        localStorage.setItem("items",JSON.stringify(items));
+    
+
+    },[items]);
+
+
+
 
     const addItem=(name,address,type,parkingLot)=>{
 
@@ -15,9 +36,9 @@ const AdminProvider=({children})=>{
                     
         }    
 
-    const updateItem=(id,newname,newaddress)=>{
+    const updateItem=(id,newname,newaddress,newtype)=>{
 
-        setItems(items.map((item)=>item.id===id ? {...items, name:newname, address:newaddress} : item))
+        setItems(items.map((item)=>item.id===id ? {...items, name:newname, address:newaddress,type:newtype} : item))
 
     }
 
