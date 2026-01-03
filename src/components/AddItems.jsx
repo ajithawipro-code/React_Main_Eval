@@ -11,6 +11,7 @@ const AddItems=()=>{
      const[parkingLot,setParkingLot]=useState("");
 
      const handleAdd=()=>{
+        if(!name.trim()|| !address.trim()) return;
 
         addItem(name,address,type,parkingLot);
         setName("");
