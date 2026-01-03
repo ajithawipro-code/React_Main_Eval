@@ -28,6 +28,7 @@ function ItemCard({item}){
     return (
 
         <div className="itemcard">
+            <p>ID: {item.id}</p>
 
             <p>Name: {item.name}</p>
              <p>Address: {item.address}</p>
